@@ -7,25 +7,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="projects")
 public class Projects {
 	@Id
 	@GeneratedValue
-	@Column(name="projid")
+	@Column(name="pid")
 	private int projId;
 	
-	@Column(name="projname")
+	@Column(name="pname")
 	private String projName;
 	
-	@Column(name="projstartdate")
+	@Column(name="pstartdate")
+	@Temporal(TemporalType.DATE)
+//	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date projStartDate;
 	
-	@Column(name="projenddate")
+	@Column(name="penddate")
+	@Temporal(TemporalType.DATE)
+//	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date projEndDate;
 	
-	@Column(name="projpriority")
+	@Column(name="ppriority")
 	private int projPriority;
 
 	public int getProjId() {

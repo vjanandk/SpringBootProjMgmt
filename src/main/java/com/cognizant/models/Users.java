@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,15 +15,16 @@ public class Users {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="userid")
+	@Column(name="uid")
 	private int userId;
 
+	@ManyToOne
+	@JoinColumn(name="pid")
+	private Projects projects;
 	
-	@Column(name="projid")
-	private int projId;
-	
-	@Column(name="taskid")
-	private int taskId;
+	@OneToOne
+	@JoinColumn(name="tid")
+	private Tasks tasks;
 	
 
 	@Column(name="firstname")
@@ -40,20 +44,20 @@ public class Users {
 		this.userId = userId;
 	}
 
-	public int getProjId() {
-		return projId;
+	public Projects getProjects() {
+		return projects;
 	}
 
-	public void setProjId(int projId) {
-		this.projId = projId;
+	public void setProjects(Projects projects) {
+		this.projects = projects;
 	}
 
-	public int getTaskId() {
-		return taskId;
+	public Tasks getTasks() {
+		return tasks;
 	}
 
-	public void setTaskId(int taskId) {
-		this.taskId = taskId;
+	public void setTasks(Tasks tasks) {
+		this.tasks = tasks;
 	}
 
 	public String getFirstName() {
@@ -82,9 +86,9 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "Users [userId=" + userId + ", projId=" + projId + ", taskId=" + taskId + ", firstName=" + firstName
+		return "Users [userId=" + userId + ", projects=" + projects + ", tasks=" + tasks + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", empId=" + empId + "]";
 	}
-	
+
 	
 }
