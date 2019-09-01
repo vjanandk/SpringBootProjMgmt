@@ -7,14 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="parentasks")
+@Table(name="parenttasks")
 public class ParentTasks {
 	@Id
 	@GeneratedValue
-	@Column(name="parentid")
+	@Column(name="pid")
 	private int parentId;
 	
-	@Column(name="tasknameparent")
+	@Column(name="ptname")
 	private String taskNameParent;
 
 	public int getParentId() {

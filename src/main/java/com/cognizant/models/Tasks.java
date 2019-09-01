@@ -6,37 +6,44 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="tasks")
 public class Tasks {
 	@Id
 	@GeneratedValue
-	@Column(name="taskid")
+	@Column(name="tid")
 	private int taskId;
 
+	@ManyToOne
+	@JoinColumn(name="ptid")
+	private ParentTasks parentTasks;
 	
-	@Column(name="parentid")
-	private int parentId;
-	
-	@Column(name="projid")
-	private int projId;
+	@ManyToOne
+	@JoinColumn(name="pid")
+	private Projects projects;
 
 	
-	@Column(name="taskname")
+	@Column(name="tname")
 	private String taskName;
 	
-	@Column(name="taskstartdate")
+	@Column(name="tstartdate")
+	@Temporal(TemporalType.DATE)
 	private Date taskStartDate;
 	
-	@Column(name="taskenddate")
+	@Column(name="tenddate")
+	@Temporal(TemporalType.DATE)
 	private Date taskEndDate;
 	
-	@Column(name="taskpriority")
+	@Column(name="tpriority")
 	private int taskPriority;
 	
-	@Column(name="taskstatus")
+	@Column(name="tstatus")
 	private String taskStatus;
 
 	public int getTaskId() {
@@ -47,20 +54,20 @@ public class Tasks {
 		this.taskId = taskId;
 	}
 
-	public int getParentId() {
-		return parentId;
+	public ParentTasks getParentTasks() {
+		return parentTasks;
 	}
 
-	public void setParentId(int parentId) {
-		this.parentId = parentId;
+	public void setParentTasks(ParentTasks parentTasks) {
+		this.parentTasks = parentTasks;
 	}
 
-	public int getProjId() {
-		return projId;
+	public Projects getProjects() {
+		return projects;
 	}
 
-	public void setProjId(int projId) {
-		this.projId = projId;
+	public void setProjects(Projects projects) {
+		this.projects = projects;
 	}
 
 	public String getTaskName() {
@@ -105,10 +112,10 @@ public class Tasks {
 
 	@Override
 	public String toString() {
-		return "Tasks [taskId=" + taskId + ", parentId=" + parentId + ", projId=" + projId + ", taskName=" + taskName
-				+ ", taskStartDate=" + taskStartDate + ", taskEndDate=" + taskEndDate + ", taskPriority=" + taskPriority
-				+ ", taskStatus=" + taskStatus + "]";
+		return "Tasks [taskId=" + taskId + ", parentTasks=" + parentTasks + ", projects=" + projects + ", taskName="
+				+ taskName + ", taskStartDate=" + taskStartDate + ", taskEndDate=" + taskEndDate + ", taskPriority="
+				+ taskPriority + ", taskStatus=" + taskStatus + "]";
 	}
-	
-	
+
+		
 }
