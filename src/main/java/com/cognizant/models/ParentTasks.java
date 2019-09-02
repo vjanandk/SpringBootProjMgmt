@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class ParentTasks {
 	@Id
 	@GeneratedValue
-	@Column(name="pid")
+	@Column(name="ptid")
 	private int parentId;
 	
 	@Column(name="ptname")

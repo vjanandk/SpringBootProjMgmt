@@ -1,0 +1,177 @@
+Users:
+------
+	{
+        "projId": 0,
+        "taskId": 0,
+        "firstName": "Vijay Anand",
+        "lastName": "Kannadasan",
+        "empId": 100000
+    }
+
+    {
+        "projId": 0,
+        "taskId": 0,
+        "firstName": "Arun Pandi",
+        "lastName": "Kannadasan",
+        "empId": 200000
+    }
+    
+ 	{
+        "projId": 0,
+        "taskId": 0,
+        "firstName": "Maruthu Pandi",
+        "lastName": "Kannadasan",
+        "empId": 300000
+    }
+    
+ 	{
+        "projId": 0,
+        "taskId": 0,
+        "firstName": "Tamil Selvi",
+        "lastName": "Kannadasan",
+        "empId": 400000
+    }
+    
+ 	{
+        "projId": 0,
+        "taskId": 0,
+        "firstName": "Nandhini Priya",
+        "lastName": "Mahendran",
+        "empId": 500000
+    }
+
+
+Projects :
+----------
+	{
+        "projName": "CMOD Migration",
+        "projStartDate": "2019-09-01",
+        "projEndDate": "2019-12-31",
+        "projPriority": 90
+    }
+
+	{
+        "projName": "FileNet Migration",
+        "projStartDate": "2019-09-01",
+        "projEndDate": "2019-12-31",
+        "projPriority": 10
+    }
+
+Parent Tasks:
+-------------
+	{
+        "taskNameParent": "Documents Extraction"
+    }
+
+	{
+        "taskNameParent": "CAT1 Enrichment"
+    }
+    
+    {
+        "taskNameParent": "Migration Engine"
+    }
+    
+	{
+        "taskNameParent": "Bundling & Transfer"
+    }
+
+	{
+        "taskNameParent": "CAT3 Enrichment"
+    }
+
+	{
+        "taskNameParent": "Bulk Load"
+    }
+
+
+Tasks:
+------
+	{	
+        "parentId": 3,
+        "projId": 2,
+        "taskName": "Build Documents Extraction Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 1,
+        "projId": 1,
+        "taskName": "Test Documents Extraction Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 1,
+        "projId": 1,
+        "taskName": "Implement Documents Extraction Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 2,
+        "projId": 1,
+        "taskName": "Build CAT1 Enrichment Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 2,
+        "projId": 1,
+        "taskName": "Test CAT1 Enrichment Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 2,
+        "projId": 1,
+        "taskName": "Implement CAT1 Enrichment Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 3,
+        "projId": 1,
+        "taskName": "Build Migration Engine Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 3,
+        "projId": 1,
+        "taskName": "Test Migration Engine Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
+
+	{
+        "parentId": 3,
+        "projId": 1,
+        "taskName": "Implement Migration Engine Scripts",
+        "taskStartDate": "2019-09-01",
+        "taskEndDate": "2019-09-15",
+        "taskPriority": 50,
+        "taskStatus": "In Progress"
+    }
