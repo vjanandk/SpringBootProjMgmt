@@ -6,4 +6,6 @@ import com.cognizant.models.Users;
 
 public interface UsersRepo extends JpaRepository<Users, Integer> {
 
+	Users findByEmpId(int empId);
+
 }
