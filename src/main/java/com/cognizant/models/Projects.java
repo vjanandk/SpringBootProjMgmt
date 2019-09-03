@@ -81,6 +81,16 @@ public class Projects {
 		return "Projects [projId=" + projId + ", projName=" + projName + ", projStartDate=" + projStartDate
 				+ ", projEndDate=" + projEndDate + ", projPriority=" + projPriority + "]";
 	}
+
+	public Projects(int projId, String projName, Date projStartDate, Date projEndDate, int projPriority) {
+		super();
+		this.projId = projId;
+		this.projName = projName;
+		this.projStartDate = projStartDate;
+		this.projEndDate = projEndDate;
+		this.projPriority = projPriority;
+	}
+	
 	
 	
 }
