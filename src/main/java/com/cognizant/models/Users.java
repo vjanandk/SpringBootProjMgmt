@@ -1,39 +1,34 @@
 package com.cognizant.models;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class Users {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="uid")
+	@Column(name = "uid")
 	private int userId;
 
-	@ManyToOne
-	@JoinColumn(name="pid")
-	private Projects projects;
-	
-	@OneToOne
-	@JoinColumn(name="tid")
-	private Tasks tasks;
-	
+	@Column(name = "pid")
+	private int projId;
 
-	@Column(name="firstname")
+	@Column(name = "tid")
+	private int taskId;
+
+	@Column(name = "firstname")
 	private String firstName;
-	
-	@Column(name="lastname")
+
+	@Column(name = "lastname")
 	private String lastName;
-	
-	@Column(name="empid")
+
+	@Column(name = "empid", unique = true)
 	private int empId;
 
 	public int getUserId() {
@@ -44,20 +39,20 @@ public class Users {
 		this.userId = userId;
 	}
 
-	public Projects getProjects() {
-		return projects;
+	public int getProjId() {
+		return projId;
 	}
 
-	public void setProjects(Projects projects) {
-		this.projects = projects;
+	public void setProjId(int projId) {
+		this.projId = projId;
 	}
 
-	public Tasks getTasks() {
-		return tasks;
+	public int getTaskId() {
+		return taskId;
 	}
 
-	public void setTasks(Tasks tasks) {
-		this.tasks = tasks;
+	public void setTaskId(int taskId) {
+		this.taskId = taskId;
 	}
 
 	public String getFirstName() {
@@ -86,9 +81,8 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "Users [userId=" + userId + ", projects=" + projects + ", tasks=" + tasks + ", firstName=" + firstName
+		return "Users [userId=" + userId + ", projId=" + projId + ", taskId=" + taskId + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", empId=" + empId + "]";
 	}
-
 	
 }

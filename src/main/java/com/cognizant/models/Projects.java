@@ -82,5 +82,4 @@ public class Projects {
 				+ ", projEndDate=" + projEndDate + ", projPriority=" + projPriority + "]";
 	}
 	
-	
 }

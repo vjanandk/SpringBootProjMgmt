@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class ParentTasks {
 	@Id
 	@GeneratedValue
-	@Column(name="pid")
+	@Column(name="ptid")
 	private int parentId;
 	
 	@Column(name="ptname")
@@ -37,6 +37,5 @@ public class ParentTasks {
 	public String toString() {
 		return "ParentTasks [parentId=" + parentId + ", taskNameParent=" + taskNameParent + "]";
 	}
-	
-	
+
 }
