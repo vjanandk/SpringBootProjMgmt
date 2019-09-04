@@ -9,7 +9,7 @@ import com.cognizant.models.Projects;
 
 public interface ProjectsRepo extends JpaRepository<Projects, Integer> {
 
-	@Query("from Projects where lower(projName) like %:projName%")
-	List<Projects> findByProjName(String projName);
+//	@Query("from Projects where lower(projName) like %:projName%")
+//	List<Projects> findByProjName(String projName);
 
 }

@@ -38,12 +38,4 @@ public class ParentTasks {
 		return "ParentTasks [parentId=" + parentId + ", taskNameParent=" + taskNameParent + "]";
 	}
 
-	public ParentTasks(int parentId, String taskNameParent) {
-		super();
-		this.parentId = parentId;
-		this.taskNameParent = taskNameParent;
-	}
-	
-	
-	
 }

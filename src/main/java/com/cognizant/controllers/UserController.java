@@ -27,13 +27,7 @@ public class UserController {
 		System.out.println("GET - Inside /users");
 		return usersRepo.findAll();
 	}
-	
-	@GetMapping("/users/{empId}")
-	public Users getuser(@PathVariable("empId") int empId) {
-		System.out.println("GET - Inside /users/{empId} :" + empId);
-		return usersRepo.findByEmpId(empId);
-	}
-	
+			
 	@PostMapping("/users")
 	public String adduser(@RequestBody Users users) {
 		System.out.println("POST - Inside /users :" + users);
@@ -48,4 +42,11 @@ public class UserController {
 		return "Requested user has been updated into the system." + users;
 	}
 
+//	@GetMapping("/users/{empId}")
+//	public Users getuser(@PathVariable("empId") int empId) {
+//		System.out.println("GET - Inside /users/{empId} :" + empId);
+//		return usersRepo.findByEmpId(empId);
+//	}
+
+	
 }

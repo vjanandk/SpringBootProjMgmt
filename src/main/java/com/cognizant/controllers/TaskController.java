@@ -26,7 +26,6 @@ public class TaskController {
 		return tasksRepo.findAll();
 	}
 	
-	
 	@PostMapping("/tasks")
 	public String addtask(@RequestBody Tasks tasks) {
 		System.out.println("POST - Inside /tasks :" + tasks);
@@ -34,7 +33,6 @@ public class TaskController {
 		return "Requested task has been added into the system." + tasks;
 	}
 
-	
 	@PutMapping("/tasks")
 	public String updatetask(@RequestBody Tasks tasks) {
 		System.out.println("PUT - Inside /tasks :" + tasks);
