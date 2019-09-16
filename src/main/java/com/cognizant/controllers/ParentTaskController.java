@@ -1,9 +1,11 @@
 package com.cognizant.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,12 @@ public class ParentTaskController {
 	public List<ParentTasks> getParentTasks() {
 		System.out.println("GET - Inside /parenttasks");
 		return parentTasksRepo.findAll();
+	}
+	
+	@GetMapping("/parenttasks/{parentId}")
+	public ParentTasks getParentTasks(@PathVariable Integer parentId) {
+		System.out.println("GET - Inside /parenttasks/{parentId} : "+ parentId);
+		return parentTasksRepo.findByParentId(parentId);
 	}
 
 	
