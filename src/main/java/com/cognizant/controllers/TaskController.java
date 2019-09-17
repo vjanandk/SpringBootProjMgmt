@@ -62,6 +62,22 @@ public class TaskController {
 		return "Requested task has been added into the system." + tasks;
 	}
 
+	@PutMapping("/tasks/{taskId}")
+	public String setEndTask(@PathVariable Integer taskId) {
+		System.out.println("PUT - Inside /tasks/{taskId} :" + taskId);
+//		tasksRepo.save(tasks);
+		Tasks task = new Tasks();
+		try {
+		task =tasksRepo.findByTaskId(taskId);
+		task.setTaskStatus("Completed");
+		tasksRepo.save(task);
+		} catch (Exception e) {
+			System.out.println("Setting end task is getting failed");
+		}
+		
+		return "Requested task has been updated into the system." + task;
+	}
+	
 	@PutMapping("/tasks")
 	public String updatetask(@RequestBody Tasks tasks) {
 		System.out.println("PUT - Inside /tasks :" + tasks);

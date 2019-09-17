@@ -10,4 +10,7 @@ public interface TasksRepo extends JpaRepository<Tasks, Integer>{
 
 	Tasks findByTaskName(String taskName);
 	List<Tasks> findByProjId(int projId);
+	
+	Tasks findByTaskId(int taskId);
+	
 }
